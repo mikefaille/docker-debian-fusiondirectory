@@ -2,7 +2,8 @@ FROM debian:jessie
 
 ENV FUSIONDIRECTORY_DEB_PKG_VERSION=1.0.9.1-1 \
     LDAP_DOMAIN=fovea.cc \
-    LDAP_PASSWORD=changeme
+    LDAP_PASSWORD=changeme \
+    FUSIONDIRECTORY_PASSWORD=changeme2
 
 EXPOSE 80
 
