@@ -17,7 +17,7 @@ if [ ! -e "/.setup" ]; then
     envsubst < /fusiondirectory.conf > /etc/fusiondirectory/fusiondirectory.conf
     yes Yes | fusiondirectory-setup --check-config
     fusiondirectory-setup --yes --check-ldap << EOF
-admin@$LDAP_DOMAIN
+admin
 $FUSIONDIRECTORY_PASSWORD
 $FUSIONDIRECTORY_PASSWORD
 EOF
