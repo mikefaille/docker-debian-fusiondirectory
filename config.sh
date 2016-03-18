@@ -1,10 +1,12 @@
 #!/bin/sh
 
-LDAP_DOMAIN_DC1=`echo $LDAP_DOMAIN|cut -d. -f1`
-LDAP_DOMAIN_DC2=`echo $LDAP_DOMAIN|cut -d. -f2`
-LDAP_DOMAIN_DC3=`echo $LDAP_DOMAIN|cut -d. -f3`
+LDAP_DOMAIN_DC1=`echo $SLDAP_DOMAIN|cut -d. -f1`
+LDAP_DOMAIN_DC2=`echo $SLDAP_DOMAIN|cut -d. -f2`
+LDAP_DOMAIN_DC3=`echo $SLDAP_DOMAIN|cut -d. -f3`
 
 export LDAP_DOMAIN_DC="dc=$LDAP_DOMAIN_DC1"
+export LDAP_PASSWORD="$SLDAP_PASSWORD"
+
 if [ _$LDAP_DOMAIN_DC2 != _ ]; then
     LDAP_DOMAIN_DC="$LDAP_DOMAIN_DC,dc=$LDAP_DOMAIN_DC2"
 fi

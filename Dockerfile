@@ -1,11 +1,11 @@
 FROM debian:jessie
 
 ENV FUSIONDIRECTORY_DEB_PKG_VERSION=1.0.9.3-1 \
-    LDAP_DOMAIN=fovea.cc \
-    LDAP_PASSWORD=changeme \
+    SLDAP_DOMAIN=fovea.cc \
+    SLDAP_PASSWORD=changeme \
     FUSIONDIRECTORY_PASSWORD=changeme2
 
-EXPOSE 80
+EXPOSE 10080
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     export LC_ALL=es_ES.UTF-8 && \
@@ -65,7 +65,7 @@ COPY fusiondirectory.conf /fusiondirectory.conf
 COPY start.sh /start.sh
 COPY config.sh /config.sh
 
-RUN     setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2 && \
+RUN     sed -i 's/Listen.*80/Listen 10080/g' /etc/apache2/ports.conf && \
         mkdir -p /var/log/apache2 /var/run/apache2 && \
         chown -R www-data:www-data /etc/fusiondirectory /var/log/apache2 /var/run/apache2 && \
         /config.sh
