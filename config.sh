@@ -12,7 +12,9 @@ if [ _$LDAP_DOMAIN_DC3 != _ ]; then
     LDAP_DOMAIN_DC="$LDAP_DOMAIN_DC,dc=$LDAP_DOMAIN_DC3"
 fi
 
-#envsubst < /fusiondirectory.conf > /etc/fusiondirectory/fusiondirectory.conf
+envsubst < /fusiondirectory.conf > /etc/fusiondirectory/fusiondirectory.conf
+yes Yes | fusiondirectory-setup --check-config
+
 
 # if [ ! -e "/etc/fusiondirectory/fusionready" ]; then
 #     yes Yes | fusiondirectory-setup --check-config
@@ -24,5 +26,3 @@ fi
 #     touch /etc/fusiondirectory/fusionready
 # fi
 
-. /etc/apache2/envvars
-/usr/sbin/apache2 -D FOREGROUND
