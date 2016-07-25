@@ -1,4 +1,15 @@
 #!/bin/sh
+set -euo
+
+if [ $LDAP_SERVER == "configure-me"]
+then
+    echo "Variable named LDAP_SERVER is not set.
+It must countain the address of your ldap server.
+For example :
+
+docker run -ti -p 10080:80  -e LDAP_SERVER= fusiondirectory"
+    exit 127
+fi
 
 export LDAP_DOMAIN_DC="dc=$(echo ${SLDAP_DOMAIN} | sed  's/\./,dc=/g')"
 
