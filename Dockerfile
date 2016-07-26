@@ -1,4 +1,4 @@
-FROM debian-base
+FROM clubcedille/debian-supervisord
 
 ENV FUSIONDIRECTORY_DEB_PKG_VERSION=1.0.14-1 \
     SLDAP_DOMAIN=example.com \
