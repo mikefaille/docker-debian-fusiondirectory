@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euo
+set -eu
 
 if [ $LDAP_SERVER == "configure-me"]
 then

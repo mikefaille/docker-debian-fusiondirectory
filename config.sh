@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo
+set -eu
 
 LDAP_DOMAIN_DC1=`echo $SLDAP_DOMAIN|cut -d. -f1`
 LDAP_DOMAIN_DC2=`echo $SLDAP_DOMAIN|cut -d. -f2`
