@@ -1,3 +1,6 @@
+# This repository is unmaintened.
+Prefer this fork : This repository is unmaintened. Prefer this fork : https://github.com/ClubCedille/docker-debian-fusiondirectory 
+
 # fusiondirectory
 FusionDirectory docker image
 
